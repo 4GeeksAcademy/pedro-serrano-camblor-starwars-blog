@@ -1,19 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Card = () => {
+const Card = (character) => {
     return (
         <div className="container-fluid py-2">
 
-            <h2 className="font-weight-light">People</h2>
-            <div className="d-flex flex-row flex-nowrap" style={{ overflowX: "auto", gap: "1rem", paddingBottom: "1rem" }}>
-
+            
                 {/* Card */}
-                <div className="card" style={{ minWidth: "26rem" }}>
+                <div className="card" style={{ width: "20rem" }}>
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlGmKtrnxElpqw3AExKXPWWBulcwjlvDJa1Q&s" className="card-img-top" alt="..." />
                     <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <h5 className="card-title">{character.name}</h5>
+                        <p className="card-text">Character description: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima aperiam dignissimos amet vel aspernatur velit cupiditate eaque esse in ducimus totam debitis similique deleniti ut, error sit, quis tempore tenetur.</p>
                     </div>
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">An item</li>
@@ -21,13 +19,11 @@ const Card = () => {
                         <li className="list-group-item">A third item</li>
                     </ul>
                     <div className="card-body">
-                        <a href="#" className="card-link">Card link</a>
-                        <a href="#" className="card-link">Another link</a>
+                        <NavLink to={"/details/"+character.id} className="card-link">Card link</NavLink>
+                        {/* <NavLink to="#" className="card-link">Another link</NavLink> */}
                     </div>
                 </div>
 
-
-            </div>
         </div>
     );
 };
