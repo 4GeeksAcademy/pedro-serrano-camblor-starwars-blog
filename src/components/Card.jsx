@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Card = (character) => {
+    
     return (
         <div className="container-fluid py-2">
 
@@ -19,7 +20,7 @@ const Card = (character) => {
                         <li className="list-group-item">A third item</li>
                     </ul>
                     <div className="card-body">
-                        <NavLink to={"/details/"+character.id} className="card-link">Card link</NavLink>
+                        <NavLink to={"/details/"+character.id} className="card-link">Read more</NavLink>
                         {/* <NavLink to="#" className="card-link">Another link</NavLink> */}
                     </div>
                 </div>

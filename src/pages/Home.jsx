@@ -8,7 +8,8 @@ export const Home = () => {
 
 	const [characters, setCharacters] = useState([])
 
-	const [localCharacter, setLocalCharacter] = useState([])
+	// Local storage-------------------------------------------------
+	/* const [localCharacter, setLocalCharacter] = useState([]) */
 
 	async function getCharacters() {
 		try {
@@ -16,8 +17,12 @@ export const Home = () => {
 			const data = await response.json();
 
 			setCharacters(data.results);
+
+			// dispatch({type, payload: data.results})
+
+			// Local storage-------------------------------------------------------------
 			/* console.log('Datos:', data.results); */
-			localStorage.setItem("Local Characters", JSON.stringify(data.results))
+			/* localStorage.setItem("Local Characters", JSON.stringify(data.results)) */
 
 
 		} catch (error) {
@@ -27,20 +32,21 @@ export const Home = () => {
 
 	useEffect(() => {
 
-		if (localStorage.getItem("Local Characters") != null) {
-
-			setCharacters(JSON.parse(localStorage.getItem("Local Characters")));
-
-		} else {
-			getCharacters()
-		}
-/* 
 		getCharacters()
 
-		localStorage.setItem("Local Characters", JSON.stringify(characters))
-		setLocalCharacter(JSON.parse(localStorage.getItem("Local Characters")))
-
-		console.log("Local Characters: ", localCharacter) */
+		// Local storage-------------------------------------------------------------------
+		/* 		if (localStorage.getItem("Local Characters") != null) {
+		
+					setCharacters(JSON.parse(localStorage.getItem("Local Characters")));
+		
+				} else {
+					getCharacters()
+				} */
+		/* 
+				localStorage.setItem("Local Characters", JSON.stringify(characters))
+				setLocalCharacter(JSON.parse(localStorage.getItem("Local Characters")))
+		
+				console.log("Local Characters: ", localCharacter) */
 
 	}, [])
 
