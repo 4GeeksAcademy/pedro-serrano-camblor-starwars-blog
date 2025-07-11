@@ -9,9 +9,20 @@ export const Navbar = () => {
 					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
 				</Link>
 				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
+
+					<div className="dropdown">
+						<button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Your favorites
+						</button>
+
+						<ul className="dropdown-menu">
+							<li>
+								<p>Fav item</p>
+								<i className="fa-solid fa-trash"></i>
+
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</nav>

@@ -1,52 +1,24 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
-import Card from "../components/Card.jsx";
+import PeopleCard from "../components/PeopleCard.jsx";
 import { useEffect, useState } from "react";
+import { getCharacters, getPlanets, getStarships } from "../services/starwarsServices.js"
 
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
+	/* const [characters, setCharacters] = useState([]) */
 
-	const [characters, setCharacters] = useState([])
-
-	// Local storage-------------------------------------------------
-	/* const [localCharacter, setLocalCharacter] = useState([]) */
-
-	async function getCharacters() {
-		try {
-			const response = await fetch('https://www.swapi.tech/api/people/');
-			const data = await response.json();
-
-			setCharacters(data.results);
-
-			// dispatch({type, payload: data.results})
-
-			// Local storage-------------------------------------------------------------
-			/* console.log('Datos:', data.results); */
-			/* localStorage.setItem("Local Characters", JSON.stringify(data.results)) */
-
-
-		} catch (error) {
-			console.error('Error al obtener los datos:', error);
-		}
-	}
 
 	useEffect(() => {
 
 		getCharacters()
+			.then((data) => dispatch({ type: "update_characters", payload: data }))
 
-		// Local storage-------------------------------------------------------------------
-		/* 		if (localStorage.getItem("Local Characters") != null) {
-		
-					setCharacters(JSON.parse(localStorage.getItem("Local Characters")));
-		
-				} else {
-					getCharacters()
-				} */
-		/* 
-				localStorage.setItem("Local Characters", JSON.stringify(characters))
-				setLocalCharacter(JSON.parse(localStorage.getItem("Local Characters")))
-		
-				console.log("Local Characters: ", localCharacter) */
+		getPlanets()
+			.then((data) => dispatch({ type: "update_planets", payload: data }))
+
+		getStarships()
+			.then((data) => dispatch({ type: "update_starships", payload: data }))
 
 	}, [])
 
@@ -56,20 +28,33 @@ export const Home = () => {
 			<h1>Pedro Serrano's - Star Wars Blog</h1>
 
 			<div className="row">
-				<h2 className="font-weight-light">Item category</h2>
+				<h2 className="font-weight-light">People</h2>
 				<div className="col-1"></div>
 				<div className="col-10 d-flex flex-row flex-nowrap" style={{ overflowX: "auto", gap: "1rem", paddingBottom: "1rem" }}>
 
-					{characters.map((character) => (
+					{store.characters.map((item) => <PeopleCard name={item.name} id={item.uid} key={item.uid} />)}
+				</div>
 
-						<Card
+				<div className="col-1"></div>
+			</div>
 
-							id={character.uid}
-							name={character.name}
+			<div className="row">
+				<h2 className="font-weight-light">Planets</h2>
+				<div className="col-1"></div>
+				<div className="col-10 d-flex flex-row flex-nowrap" style={{ overflowX: "auto", gap: "1rem", paddingBottom: "1rem" }}>
 
-						/>
+					{store.planets.map((item) => <PeopleCard name={item.name} id={item.uid} key={item.uid} />)}
+				</div>
 
-					))}
+				<div className="col-1"></div>
+			</div>
+
+			<div className="row">
+				<h2 className="font-weight-light">Starships</h2>
+				<div className="col-1"></div>
+				<div className="col-10 d-flex flex-row flex-nowrap" style={{ overflowX: "auto", gap: "1rem", paddingBottom: "1rem" }}>
+
+					{store.starships.map((item) => <PeopleCard name={item.name} id={item.uid} key={item.uid} />)}
 				</div>
 
 				<div className="col-1"></div>
