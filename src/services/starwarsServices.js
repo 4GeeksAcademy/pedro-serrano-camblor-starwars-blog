@@ -19,13 +19,16 @@ export async function getCharacters() {
 
 export async function getCharacterDetails(id) {
     try {
-        let response = await fetch('https://www.swapi.tech/api/people/'+id, {
+        let response = await fetch('https://www.swapi.tech/api/people/' + id, {
             method: 'GET'
         })
         let data = await response.json()
 
+        console.log(data);
+
+
         if (response.status === 200) {
-            return data.results
+            return data.result
         }
 
 
@@ -58,13 +61,13 @@ export async function getPlanets() {
 
 export async function getPlanetDetails(id) {
     try {
-        let response = await fetch('https://www.swapi.tech/api/planets/'+id, {
+        let response = await fetch('https://www.swapi.tech/api/planets/' + id, {
             method: 'GET'
         })
         let data = await response.json()
 
         if (response.status === 200) {
-            return data.results
+            return data.result
         }
 
 
@@ -96,13 +99,13 @@ export async function getStarships() {
 
 export async function getStarshipDetails(id) {
     try {
-        let response = await fetch('https://www.swapi.tech/api/starships/'+id, {
+        let response = await fetch('https://www.swapi.tech/api/starships/' + id, {
             method: 'GET'
         })
         let data = await response.json()
 
         if (response.status === 200) {
-            return data.results
+            return data.result
         }
 
 

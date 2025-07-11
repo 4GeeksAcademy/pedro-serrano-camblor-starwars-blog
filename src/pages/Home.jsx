@@ -1,5 +1,7 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import PeopleCard from "../components/PeopleCard.jsx";
+import PlanetsCard from "../components/PlanetsCard.jsx";
+import StarshipsCard from "../components/StarshipsCard.jsx";
 import { useEffect, useState } from "react";
 import { getCharacters, getPlanets, getStarships } from "../services/starwarsServices.js"
 
@@ -43,7 +45,7 @@ export const Home = () => {
 				<div className="col-1"></div>
 				<div className="col-10 d-flex flex-row flex-nowrap" style={{ overflowX: "auto", gap: "1rem", paddingBottom: "1rem" }}>
 
-					{store.planets.map((item) => <PeopleCard name={item.name} id={item.uid} key={item.uid} />)}
+					{store.planets.map((item) => <PlanetsCard name={item.name} id={item.uid} key={item.uid} />)}
 				</div>
 
 				<div className="col-1"></div>
@@ -54,7 +56,7 @@ export const Home = () => {
 				<div className="col-1"></div>
 				<div className="col-10 d-flex flex-row flex-nowrap" style={{ overflowX: "auto", gap: "1rem", paddingBottom: "1rem" }}>
 
-					{store.starships.map((item) => <PeopleCard name={item.name} id={item.uid} key={item.uid} />)}
+					{store.starships.map((item) => <StarshipsCard name={item.name} id={item.uid} key={item.uid} />)}
 				</div>
 
 				<div className="col-1"></div>

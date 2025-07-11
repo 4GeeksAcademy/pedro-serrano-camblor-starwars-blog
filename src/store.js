@@ -4,10 +4,13 @@ export const initialStore = () => {
 
     characters: [],
     characterDetails: [],
+
     planets: [],
     planetDetails: [],
+
     starships: [],
     starshipDetails: [],
+    
     favs: []
   }
 }
