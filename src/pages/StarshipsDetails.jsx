@@ -33,8 +33,8 @@ export const StarshipsDetails = () => {
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlGmKtrnxElpqw3AExKXPWWBulcwjlvDJa1Q&s" className="card-img-top" alt="..." />
                         </div>
                         <div className="col-5">
-                            {<h1>{starshipDetailsContainer.name + " (" + id + ")"}</h1>}
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem nemo dolor itaque sunt accusamus laboriosam hic praesentium quo quos porro consequuntur numquam doloribus, iure veritatis quisquam necessitatibus, repellat tenetur!</p>
+                            {<h1>{starshipDetailsContainer.name}</h1>}
+                            <p>The missing description of a Starship {" (" + id + ")"}</p>
                         </div>
                         <div className="col-1"></div>
                     </div>
@@ -49,36 +49,37 @@ export const StarshipsDetails = () => {
                     <div className="container my-2">
                         <div className="row d-flex justify-content-between">
                             <div className="col-3">
-                                <h3>Gender</h3>
-                                <p>{starshipDetailsContainer.gender}</p>
+                                <h3>Startship class</h3>
+                                <p>{starshipDetailsContainer.starship_class}</p>
                             </div>
 
                             <div className="col-3">
-                                <h3>Birth year</h3>
-                                <p>{starshipDetailsContainer.birth_year}</p>
+                                <h3>Cargo capacity</h3>
+                                <p>{starshipDetailsContainer.cargo_capacity}</p>
                             </div>
 
 
                             <div className="col-3">
-                                <h3>Homeworld</h3>
-                                <p>{starshipDetailsContainer.homeworld}</p>
+
+                                <h3>Cost in credits</h3>
+                                <p>{starshipDetailsContainer.cost_in_credits}</p>
                             </div>
                         </div>
 
                         <div className="row d-flex justify-content-between">
                             <div className="col-3">
-                                <h3>Eye color</h3>
-                                <p>{starshipDetailsContainer.eye_color}</p>
+                                <h3>Length</h3>
+                                <p>{starshipDetailsContainer.length}</p>
                             </div>
 
                             <div className="col-3">
-                                <h3>Height</h3>
-                                <p>{starshipDetailsContainer.height}</p>
+                                <h3>Max. atmos. speed</h3>
+                                <p>{starshipDetailsContainer.max_atmosphering_speed}</p>
                             </div>
 
                             <div className="col-3">
-                                <h3>Skin color</h3>
-                                <p>{starshipDetailsContainer.skin_color}</p>
+                                <h3>Hyperdrive rating</h3>
+                                <p>{starshipDetailsContainer.hyperdrive_rating}</p>
                             </div>
 
                         </div>

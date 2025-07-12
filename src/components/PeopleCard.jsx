@@ -11,6 +11,7 @@ const PeopleCard = ({ name, id }) => {
 
             <div className="card" style={{ width: "18rem" }}>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlGmKtrnxElpqw3AExKXPWWBulcwjlvDJa1Q&s" className="card-img-top" alt="..." />
+                                
                 <div className="card-body">
                     <h5 className="card-title" id={id}>{name}</h5>
                     <p className="card-text">Character description: Lorem ipsum dolor...</p>

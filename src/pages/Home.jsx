@@ -26,7 +26,7 @@ export const Home = () => {
 
 
 	return (
-		<div className="text-center mt-5">
+		<div className="app-background text-center text-warning mt-5" >
 			<h1>Pedro Serrano's - Star Wars Blog</h1>
 
 			<div className="row">

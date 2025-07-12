@@ -36,8 +36,8 @@ export const PeopleDetails = () => {
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlGmKtrnxElpqw3AExKXPWWBulcwjlvDJa1Q&s" className="card-img-top" alt="..." />
                         </div>
                         <div className="col-5">
-                            {<h1>{characterDetailsContainer.name + " (" + id + ")"}</h1>}
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem nemo dolor itaque sunt accusamus laboriosam hic praesentium quo quos porro consequuntur numquam doloribus, iure veritatis quisquam necessitatibus, repellat tenetur!</p>
+                            {<h1>{characterDetailsContainer.name}</h1>}
+                            <p>The missing description of a character {" (" + id + ")"}</p>
                         </div>
                         <div className="col-1"></div>
                     </div>
