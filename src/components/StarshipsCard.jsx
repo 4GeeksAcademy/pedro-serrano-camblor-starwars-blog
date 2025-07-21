@@ -6,6 +6,11 @@ const StarshipsCard = ({ name, id }) => {
 
     const { store, dispatch } = useGlobalReducer()
 
+    function addFav() {
+        dispatch({ type: 'add_favs', payload: { name: name, id: id } })
+
+    }
+
     return (
         <div className="container-fluid py-2">
 
@@ -28,7 +33,7 @@ const StarshipsCard = ({ name, id }) => {
                     </button>
 
                     <button className="btn btn-warning">
-                        <i className="fa-solid fa-heart"></i>
+                        <i className="fa-solid fa-heart" onClick={addFav}></i>
                     </button>
                 </div>
             </div>
